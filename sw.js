@@ -2,15 +2,15 @@
 
 //1.Nombre del caché y archivos a cachear
 const CACHE_NAME = "mi-cache-v1";
-const BASE_PATH = "Ejemplo_PWA";
 const urlsToCache = [
-    `${BASE_PATH}index.htm`,
-    `${BASE_PATH}offline.html`,
-    `${BASE_PATH}icons/web-72x72.png`,
-    `${BASE_PATH}icons/web-96x96.png`,
-    `${BASE_PATH}icons/web-192x192.png`,
-    `${BASE_PATH}icons/web-256x256.png`,
-    `${BASE_PATH}icons/web-512x512.png`  
+  "./index.html",
+  "./offline.html",
+  "./icons/web-72x72.png",
+  "./icons/web-96x96.png",
+  "./icons/web-128x128.png",
+  "./icons/web-192x192.png",
+  "./icons/web-256x256.png",
+  "./icons/web-512x512.png"
 ];
 
 //2. Install -> Se ejecuta al instalar el SW
