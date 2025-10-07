@@ -5,7 +5,10 @@ const CACHE_NAME = "mi-cache-v1";
 const urlsToCache = [
     "index.html",
     "offline.html",
+    "icons/web-72x72.png",
+    "icons/web-96x96.png",
     "icons/web-192x192.png",
+    "icons/web-256x256.png",
     "icons/web-512x512.png"  
 ];
 
