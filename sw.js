@@ -4,14 +4,14 @@
 const CACHE_NAME = "mi-cache-v1";
 const urlsToCache = [
     "index.html",
-    "style.css", 
-    "app.js",
-    "offline.html" 
+    "offline.html",
+    "icons/web-192x192.png",
+    "icons/web-512x512.png"  
 ];
 
 //2. Install -> Se ejecuta al instalar el SW
 self.addEventListener("install", event =>{
-    event.waitUntill(
+    event.waitUntil(
         caches.open(CACHE_NAME).then(cache=> cache.addAll(urlsToCache))
     );
 });
