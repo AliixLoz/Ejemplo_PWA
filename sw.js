@@ -1,0 +1,29 @@
+//Estructura básica de un Service Worker
+
+//1.Nombre del caché y archivos a cachear
+const CACHE_NAME = "mi-cache-v1";
+const urlsToCache = [
+    "index.html",
+    "style.css", 
+    "app.js",
+    "offline.html" 
+];
+
+//2. Install -> Se ejecuta al instalar el SW
+self.addEventListener("install", event =>{
+    event.waitUntill(
+        caches.open(CACHE_NAME).then(cache=> cache.addAll(urlsToCache))
+    );
+});
+
+//3. Activate -> se ejecuta al activarse (limpia caches viejas)
+self.addEventListener("activate", event => {
+    event.waitUntil(
+        caches.keys().then(keys=>
+            Promise.all(
+                keys.filter(key=>key !== CACHE_NAME)
+                    .map(key => caches.delete(key))
+            )
+        )
+    );
+});
